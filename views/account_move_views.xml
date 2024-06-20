@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Inicia la definición de la vista -->
+    <record id="account_invoice_send_wizard_form_whatsapp_button" model="ir.ui.view">
+        <field name="name">account.invoice.send.whatsapp.button</field>
+        <field name="model">account.invoice.send</field>
+        <field name="inherit_id" ref="account.account_invoice_send_wizard_form"/>
+        <field name="arch" type="xml">
+            <!-- Insertar el botón después del botón 'Send & Print' -->
+            <xpath expr="//footer/button[@name='send_and_print_action']" position="after">
+                <button name="action_send_whatsapp"
+                        type="object"
+                        string="Send via WhatsApp"
+                        class="btn btn-primary"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
