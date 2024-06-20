@@ -12,6 +12,7 @@
                         type="object"
                         string="Send via WhatsApp"
                         class="btn btn-primary"/>
+
             </xpath>
         </field>
     </record>
