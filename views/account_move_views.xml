@@ -7,12 +7,13 @@
         <field name="inherit_id" ref="account.account_invoice_send_wizard_form"/>
         <field name="arch" type="xml">
             <!-- Insertar el botón después del botón 'Send & Print' -->
+
             <xpath expr="//footer/button[@name='send_and_print_action']" position="after">
                 <button name="action_send_whatsapp"
                         type="object"
                         string="Enviar via WhatsApp"
-                        class="btn btn-primary"/>
-
+                        class="btn btn-primary"
+                        />
             </xpath>
         </field>
     </record>
