@@ -10,7 +10,7 @@
             <xpath expr="//footer/button[@name='send_and_print_action']" position="after">
                 <button name="action_send_whatsapp"
                         type="object"
-                        string="Send via WhatsApp"
+                        string="Enviar via WhatsApp"
                         class="btn btn-primary"/>
 
             </xpath>
