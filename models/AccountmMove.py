@@ -59,14 +59,6 @@ class AccountInvoiceSend(models.TransientModel):
         SUPABASE_KEY = supabase_config.supabase_key
         SUPABASE_BUCKET = supabase_config.supabase_bucket
 
-        # Aquí puedes continuar con tu lógica de negocio utilizando SUPABASE_URL, SUPABASE_KEY y SUPABASE_BUCKET
-
-        # Por ejemplo, imprimir los valores obtenidos
-        print(f"SUPABASE_URL: {SUPABASE_URL}")
-        print(f"SUPABASE_KEY: {SUPABASE_KEY}")
-        print(f"SUPABASE_BUCKET: {SUPABASE_BUCKET}")
-
-
         supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
         # Generate the filename

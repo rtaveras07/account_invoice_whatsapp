@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <xpath expr="//div[@class='o_setting_container']/div[@class='settings']" position="inside">
                 <div class="app_settings_block"
-                     data-string="Supabase Settings"
+                     data-string="Whatsapp Settings"
                      data-key="supabase_settings" string="Supabase Settings">
                     <!--agrear notebook-->
                     <notebook>

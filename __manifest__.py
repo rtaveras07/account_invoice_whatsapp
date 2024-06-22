@@ -1,69 +1,40 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Invoince Whatsapp",
+    'name': "Invoice WhatsApp",
     'license': 'LGPL-3',
-
-    'summary': """
-        Send Invoices Easily via WhatsApp
+    'summary': """Customer can download the invoice in PDF format and send it to WhatsApp""",
+    'description': """
+Send Invoices Easily via WhatsApp
 
 Now you can effortlessly send invoices to your customers through WhatsApp! Follow these simple steps to ensure your customers can download and access their invoices directly on their devices:
 
-    Create the Invoice:
-        Use your preferred invoicing software or application to generate the invoice.
-        Ensure the invoice includes all necessary details such as itemized charges, total amount, due date, and payment instructions.
+1. **Create the Invoice:**
+   - From odoo you create the invoice.
+   - in the button send y print you can send the invoice to whatsapp from the button send via whatsapp.
 
-    Save the Invoice as a PDF:
-        Export or save the completed invoice as a PDF file.
-        Make sure the PDF is clear and easily readable.
+2. **Save the Invoice as a PDF:**
+   - the customer can download the invoice in PDF format through the link that is sent to WhatsApp.
 
-    Send the Invoice via WhatsApp:
-        Open WhatsApp on your device.
-        Select the customer you wish to send the invoice to from your contacts or start a new chat.
-        Tap on the attachment icon (usually a paperclip) in the chat window.
-        Choose the 'Document' option and select the PDF invoice from your files.
-        Add a message if needed, then tap 'Send'.
-
-    Customer Downloads the Invoice:
-        The customer will receive the PDF invoice in their WhatsApp chat.
-        They can tap on the PDF to open it.
-        To download, they simply tap on the download button or use the options menu to save the PDF to their device.
-
-By using WhatsApp for invoice delivery, you ensure quick and convenient access for your customers, enhancing their overall experience and streamlining your billing process.""",
-
-    'description': """
-        customer could donwload the invoice in pdf format and send to whatsapp
-    """,
-
+3. **Before start to enjoy it:**
+   - Create a Supabase account.
+   - Create a new project. (storage)
+   - in odoo Open Settings, Whatsapp Settings and complete the fields with the information of your supabase account.
+   - comple the key, url and bucket of your supabase account.
+   """,
     'author': "AR",
     'website': "http://www.taveras.com",
-
-
-    # Categories can be used to filter modules in modules listing
-
-    # for the full list
-    'category': 'Uncategorized',
-    'version': '0.1',
-
-    # any module necessary for this one to work correctly
-    'depends': ['base'],
-
-    # always loaded
+    'category': 'Accounting',
+    'version': '15.0.1.0.0',
+    'depends': ['base', 'account'],
     'data': [
-
         'views/account_move_views.xml',
         'views/res_config_settings_view.xml',
-
-
     ],
-    # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
-    #'images': 'statics/images/icon.png',
-    'icon': 'account_invoice_whatsapp/static/images/icon.png',
+    'images': ['static/description/icon.png'],
     'installable': True,
     'application': False,
     'auto_install': False,
-    'license': 'AGPL-3',
-
 }
