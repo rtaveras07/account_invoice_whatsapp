@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <record id="view_res_config_settings_tree_inherit" model="ir.ui.view">
+            <field name="name">res.config.settings.view.tree.inherit</field>
+            <field name="model">res.config.settings</field>
+            <field name="arch" type="xml">
+                <tree string="Config Settings">
+                    <field name="supabase_url"/>
+                    <field name="supabase_key"/>
+                    <field name="supabase_bucket"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

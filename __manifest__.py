@@ -4,18 +4,19 @@
     'license': 'LGPL-3',
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Send easy way invoice to whatsapp
+        Now you can send yours invoice customer by whatsapp and download at there device""",
 
     'description': """
-        Long description of module's purpose
+        customer could donwload the invoice in pdf format and send to whatsapp
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "AR",
+    'website': "http://www.taveras.com",
+
 
     # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
+
     # for the full list
     'category': 'Uncategorized',
     'version': '0.1',
@@ -26,13 +27,21 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        #'views/views.xml',
+        #'views/templates.xml',
         'views/account_move_views.xml',
+        'views/res_config_settings_view.xml',
+        #'views/res_config_settings_view_tree.xml',
+
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
+    'images': 'statics/images/icon.png',
+    'installable': True,
+    'application': False,
+    'auto_install': False,
+    'license': 'AGPL-3',
 
 }

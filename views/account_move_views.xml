@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+
+
+
+
     <!-- Inicia la definición de la vista -->
     <record id="account_invoice_send_wizard_form_whatsapp_button" model="ir.ui.view">
         <field name="name">account.invoice.send.whatsapp.button</field>

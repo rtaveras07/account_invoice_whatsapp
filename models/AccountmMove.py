@@ -39,9 +39,36 @@ class AccountInvoiceSend(models.TransientModel):
         pdf_data = report._render_qweb_pdf([invoice.id])[0]
 
         # Supabase configuration
-        SUPABASE_URL = 'https://gfhxgswznpwkxoqujdln.supabase.co'
-        SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdmaHhnc3d6bnB3a3hvcXVqZGxuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTg4OTk4NTAsImV4cCI6MjAzNDQ3NTg1MH0.ZfjrGWV1xwN1M-D5YoJQNsbJtSaYghTSSsdCBCQxhaM'
-        SUPABASE_BUCKET = 'odooinvoices'
+        # Obtener la configuración de Supabase más reciente
+        supabase_config = self.env['res.config.settings'].sudo().search([], order='id desc', limit=1)
+
+        # Verificar si se encontró alguna configuración
+        if not supabase_config:
+            return {
+                'type': 'ir.actions.client',
+                'tag': 'display_notification',
+                'params': {
+                    'title': 'Error',
+                    'type': 'warning',
+                    'message': 'No se encontró ninguna configuración de Supabase.'
+                }
+            }
+
+        # Obtener los valores específicos de la configuración
+        SUPABASE_URL = supabase_config.supabase_url
+        SUPABASE_KEY = supabase_config.supabase_key
+        SUPABASE_BUCKET = supabase_config.supabase_bucket
+
+        # Aquí puedes continuar con tu lógica de negocio utilizando SUPABASE_URL, SUPABASE_KEY y SUPABASE_BUCKET
+
+        # Por ejemplo, imprimir los valores obtenidos
+        print(f"SUPABASE_URL: {SUPABASE_URL}")
+        print(f"SUPABASE_KEY: {SUPABASE_KEY}")
+        print(f"SUPABASE_BUCKET: {SUPABASE_BUCKET}")
+
+       # SUPABASE_URL = 'https://gfhxgswznpwkxoqujdln.supabase.co'
+        #SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdmaHhnc3d6bnB3a3hvcXVqZGxuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTg4OTk4NTAsImV4cCI6MjAzNDQ3NTg1MH0.ZfjrGWV1xwN1M-D5YoJQNsbJtSaYghTSSsdCBCQxhaM'
+        #SUPABASE_BUCKET = 'odooinvoices'
 
         supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
