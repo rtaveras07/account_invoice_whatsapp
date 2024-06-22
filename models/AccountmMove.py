@@ -66,9 +66,6 @@ class AccountInvoiceSend(models.TransientModel):
         print(f"SUPABASE_KEY: {SUPABASE_KEY}")
         print(f"SUPABASE_BUCKET: {SUPABASE_BUCKET}")
 
-       # SUPABASE_URL = 'https://gfhxgswznpwkxoqujdln.supabase.co'
-        #SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdmaHhnc3d6bnB3a3hvcXVqZGxuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTg4OTk4NTAsImV4cCI6MjAzNDQ3NTg1MH0.ZfjrGWV1xwN1M-D5YoJQNsbJtSaYghTSSsdCBCQxhaM'
-        #SUPABASE_BUCKET = 'odooinvoices'
 
         supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
@@ -97,7 +94,7 @@ class AccountInvoiceSend(models.TransientModel):
         # Create the WhatsApp URL
         whatsapp_url = f"https://api.whatsapp.com/send?phone={phone_number}&text={encoded_message}"
 
-        release = "No hay número de teléfono registrado para este cliente"
+
 
         return {
             'type': 'ir.actions.act_url',
