@@ -22,7 +22,7 @@ Now you can effortlessly send invoices to your customers through WhatsApp! Follo
    - comple the key, url and bucket of your supabase account.
    """,
     'author': "AR",
-    'website': "http://www.taveras.com",
+    'website': "http://taveras.com.do",
     'category': 'Accounting',
     'version': '15.0.1.0.0',
     'depends': ['base', 'account'],
